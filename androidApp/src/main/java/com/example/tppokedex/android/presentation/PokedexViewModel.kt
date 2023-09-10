@@ -1,9 +1,11 @@
-package com.example.tppokedex.android
+package com.example.tppokedex.android.presentation
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.tppokedex.android.data.model.Pokedex
+import com.example.tppokedex.android.domain.PokedexRepository
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -14,7 +16,8 @@ class PokedexViewModel(private val pokedexRepository: PokedexRepository) : ViewM
     val pokedex = MutableLiveData<Pokedex>()
 
     private val _screenState: MutableStateFlow<PokedexScreenState> = MutableStateFlow(
-        PokedexScreenState.Loading)
+        PokedexScreenState.Loading
+    )
     val screenState: Flow<PokedexScreenState> = _screenState
 
     private val coroutineExceptionHandler =

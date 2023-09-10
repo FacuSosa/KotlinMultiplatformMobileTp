@@ -1,4 +1,4 @@
-package com.example.tppokedex.android
+package com.example.tppokedex.android.application
 
 import java.util.Locale
 

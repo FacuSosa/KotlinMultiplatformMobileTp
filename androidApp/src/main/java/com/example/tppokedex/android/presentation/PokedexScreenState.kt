@@ -1,4 +1,6 @@
-package com.example.tppokedex.android
+package com.example.tppokedex.android.presentation
+
+import com.example.tppokedex.android.data.model.Pokedex
 
 sealed class PokedexScreenState {
 

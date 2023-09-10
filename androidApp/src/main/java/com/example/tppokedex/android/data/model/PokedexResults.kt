@@ -1,4 +1,4 @@
-package com.example.tppokedex.android
+package com.example.tppokedex.android.data.model
 
 import com.google.gson.annotations.SerializedName
 
