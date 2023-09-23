@@ -3,11 +3,11 @@ package com.example.tppokedex.android.core
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.tppokedex.android.data.model.PokedexResults
 import com.example.tppokedex.android.R
-import com.example.tppokedex.android.application.ImageBuilder
-import com.example.tppokedex.android.application.StringFormatter
+import com.example.tppokedex.application.ImageBuilder
+import com.example.tppokedex.application.StringFormatter
 import com.example.tppokedex.android.databinding.ItemPokedexBinding
+import com.example.tppokedex.data.model.PokedexResults
 import com.squareup.picasso.Picasso
 
 class PokedexAdapter : RecyclerView.Adapter<PokedexAdapter.PokedexViewHolder>() {

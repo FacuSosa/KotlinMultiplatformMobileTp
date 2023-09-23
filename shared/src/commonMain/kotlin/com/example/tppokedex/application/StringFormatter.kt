@@ -1,6 +1,7 @@
-package com.example.tppokedex.android.application
+package com.example.tppokedex.application
 
-import java.util.Locale
+
+
 
 object StringFormatter {
 
@@ -10,7 +11,7 @@ object StringFormatter {
 
     private fun changeFirstLetterToUppercase(str: String): String {
         return str.replaceFirstChar {
-            if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString()
+            if (it.isLowerCase()) it.titlecase() else it.toString()
         }
     }
 

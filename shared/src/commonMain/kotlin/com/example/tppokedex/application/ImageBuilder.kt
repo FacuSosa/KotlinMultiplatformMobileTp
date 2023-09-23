@@ -1,4 +1,4 @@
-package com.example.tppokedex.android.application
+package com.example.tppokedex.application
 
 object ImageBuilder {
 

@@ -1,6 +1,7 @@
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
+    kotlin("plugin.serialization") version "1.6.10"
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
@@ -32,6 +33,10 @@ kotlin {
             dependencies {
                 //KTOR
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
+                implementation("io.ktor:ktor-client-logging:$ktorVersion")
+
+                //NAPIER
+                implementation("io.github.aakira:napier:2.6.1")
 
                 //SERIALIZATION
                 implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
@@ -65,8 +70,11 @@ kotlin {
 
 android {
     namespace = "com.example.tppokedex"
-    compileSdk = 33
+    compileSdk = 34
     defaultConfig {
         minSdk = 26
     }
+}
+dependencies {
+    implementation("androidx.compose.ui:ui-text-android:1.5.1")
 }

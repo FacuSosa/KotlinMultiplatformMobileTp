@@ -11,7 +11,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tppokedex.android.core.PokedexAdapter
-import com.example.tppokedex.android.data.model.Pokedex
+import com.example.tppokedex.data.model.Pokedex
 import com.example.tppokedex.android.databinding.ActivityMainBinding
 import com.example.tppokedex.android.presentation.PokedexScreenState
 import com.example.tppokedex.android.presentation.PokedexViewModel

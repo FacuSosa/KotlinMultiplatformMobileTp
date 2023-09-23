@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.tppokedex.android"
-    compileSdk = 33
+    compileSdk = 34
     defaultConfig {
         applicationId = "com.example.tppokedex.android"
         minSdk = 26
