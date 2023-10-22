@@ -2,6 +2,7 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     kotlin("plugin.serialization") version "1.6.10"
+    id("com.squareup.sqldelight")
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
@@ -42,6 +43,10 @@ kotlin {
                 implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
                 implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
 
+                //SQLDelight
+                implementation("com.squareup.sqldelight:runtime:1.5.5")
+
+
             }
         }
         val commonTest by getting {
@@ -54,6 +59,10 @@ kotlin {
                 //KTOR
                 implementation("io.ktor:ktor-client-okhttp:$ktorVersion")
 
+                //SQLDelight
+                implementation("com.squareup.sqldelight:android-driver:1.5.5")
+
+
             }
         }
 
@@ -62,11 +71,21 @@ kotlin {
                 //KTOR
                 implementation("io.ktor:ktor-client-ios:$ktorVersion")
 
+                //SQLDelight
+                implementation("com.squareup.sqldelight:native-driver:1.5.5")
+
             }
         }
 
     }
 }
+
+sqldelight {
+    database("AppDatabase") {
+        packageName = "com.pokedex.db"
+    }
+}
+
 
 android {
     namespace = "com.example.tppokedex"
