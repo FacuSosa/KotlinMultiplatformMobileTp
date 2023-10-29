@@ -2,9 +2,7 @@ package com.example.tppokedex.android.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.tppokedex.data.PokedexRepository
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import com.example.tppokedex.data.remote.PokedexRepository
 
 class PokedexViewModelFactory : ViewModelProvider.Factory {
 

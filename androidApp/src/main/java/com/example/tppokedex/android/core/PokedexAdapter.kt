@@ -8,7 +8,6 @@ import com.example.tppokedex.application.ImageBuilder
 import com.example.tppokedex.application.StringFormatter
 import com.example.tppokedex.android.databinding.ItemPokedexBinding
 import com.example.tppokedex.data.model.PokedexResults
-import com.example.tppokedex.data.model.RandomData
 import com.squareup.picasso.Picasso
 
 class PokedexAdapter : RecyclerView.Adapter<PokedexAdapter.PokedexViewHolder>() {

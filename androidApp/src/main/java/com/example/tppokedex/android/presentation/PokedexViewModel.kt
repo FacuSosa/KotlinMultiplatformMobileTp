@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.tppokedex.data.PokedexRepository
+import com.example.tppokedex.data.remote.PokedexRepository
 import com.example.tppokedex.data.model.Pokedex
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.flow.Flow

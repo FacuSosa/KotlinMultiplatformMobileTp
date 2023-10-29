@@ -1,7 +1,6 @@
-package com.example.tppokedex.data
+package com.example.tppokedex.data.remote
 
 import com.example.tppokedex.data.model.Pokedex
-import com.example.tppokedex.data.model.PokedexResults
 import com.example.tppokedex.initLogger
 import io.github.aakira.napier.Napier
 import io.ktor.client.HttpClient
@@ -11,7 +10,6 @@ import io.ktor.client.plugins.logging.LogLevel
 import io.ktor.client.plugins.logging.Logger
 import io.ktor.client.plugins.logging.Logging
 import io.ktor.client.request.get
-import io.ktor.client.request.parameter
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 

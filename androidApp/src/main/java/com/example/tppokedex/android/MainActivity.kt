@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
         // Itera a través de los resultados de la API y realiza la inserción en la base de datos.
         for (result in pokedex.results) {
             // Inserta el nombre y la URL en la tabla "Pokemons".
-            repositoryPokedexBD.insert(result.name, result.url)
+            repositoryPokedexBD.insertPokemon(result.name, result.url)
 
         }
     }
@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
         //Instancia
         val repositoryPokedexBD  = PokedexDBRepository(databaseDriverFactory = DatabaseDriverFactory(this))
         //Busco en la bd
-        val pokemon = repositoryPokedexBD.get()
+        val pokemon = repositoryPokedexBD.getAllPokemon()
 
         if (pokemon.isEmpty()){
             Toast.makeText(this, "Error buscando la informacion", Toast.LENGTH_LONG).show()
