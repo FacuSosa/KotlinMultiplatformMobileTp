@@ -64,10 +64,30 @@ class MainActivity : AppCompatActivity() {
         binding.pokedexProgressBar.visibility = View.GONE
         pokedexAdapter.updatePokedex(pokedex.results)
 
+        val repositoryPokedexBD = PokedexDBRepository(DatabaseDriverFactory(this))
+
+        // Itera a través de los resultados de la API y realiza la inserción en la base de datos.
+        for (result in pokedex.results) {
+            // Inserta el nombre y la URL en la tabla "Pokemons".
+            repositoryPokedexBD.insert(result.name, result.url)
+
+        }
     }
 
     private fun handlerError() {
-        Toast.makeText(this, "Error buscando la informacion", Toast.LENGTH_LONG).show()
+
+        //Instancia
+        val repositoryPokedexBD  = PokedexDBRepository(databaseDriverFactory = DatabaseDriverFactory(this))
+        //Busco en la bd
+        val pokemon = repositoryPokedexBD.get()
+
+        if (pokemon.isEmpty()){
+            Toast.makeText(this, "Error buscando la informacion", Toast.LENGTH_LONG).show()
+        }else{
+            binding.pokedexProgressBar.visibility = View.GONE
+            pokedexAdapter.updatePokedex(pokemon)
+            Toast.makeText(this, "No hay conexion a internet", Toast.LENGTH_LONG).show()
+        }
     }
 
     private fun showLoading() {

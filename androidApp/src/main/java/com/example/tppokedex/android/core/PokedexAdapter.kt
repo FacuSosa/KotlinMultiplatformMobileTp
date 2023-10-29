@@ -14,7 +14,7 @@ import com.squareup.picasso.Picasso
 class PokedexAdapter : RecyclerView.Adapter<PokedexAdapter.PokedexViewHolder>() {
 
     private val pokemonList = mutableListOf<PokedexResults>()
-    private val pokemonErrorList = mutableListOf<RandomData>()
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokedexViewHolder {
         val pokedexBinding = ItemPokedexBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -37,7 +37,7 @@ class PokedexAdapter : RecyclerView.Adapter<PokedexAdapter.PokedexViewHolder>() 
         return pokemonList.size
     }
 
-    fun updatePokedex(results: List<PokedexResults>?) {
+    fun updatePokedex(results: List<PokedexResults>) {
         pokemonList.clear()
         if(results != null) {
             pokemonList.addAll(results)
@@ -45,13 +45,7 @@ class PokedexAdapter : RecyclerView.Adapter<PokedexAdapter.PokedexViewHolder>() 
         notifyDataSetChanged()
     }
 
-    fun errorPokedex(results: List <RandomData>?) {
-        pokemonErrorList.clear()
-        if(results != null) {
-            pokemonErrorList.addAll(results)
-        }
-        notifyDataSetChanged()
-    }
+
 
     class PokedexViewHolder(val binding: ItemPokedexBinding) :
         RecyclerView.ViewHolder(binding.root)
