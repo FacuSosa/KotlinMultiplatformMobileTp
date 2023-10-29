@@ -1,9 +1,9 @@
 package com.example.tppokedex
 
 import android.content.Context
+import app.cash.sqldelight.db.SqlDriver
+import app.cash.sqldelight.driver.android.AndroidSqliteDriver
 import com.pokedex.db.AppDatabase
-import com.squareup.sqldelight.android.AndroidSqliteDriver
-import com.squareup.sqldelight.db.SqlDriver
 import io.github.aakira.napier.DebugAntilog
 import io.github.aakira.napier.Napier
 

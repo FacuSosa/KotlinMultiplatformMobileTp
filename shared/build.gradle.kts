@@ -2,7 +2,7 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     kotlin("plugin.serialization") version "1.6.10"
-    id("com.squareup.sqldelight")
+    id("app.cash.sqldelight") version "2.0.0"
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
@@ -29,6 +29,7 @@ kotlin {
 
     sourceSets {
         val ktorVersion = "2.0.0-beta-1"
+        val sqlDelightVersion = "2.0.0"
 
         val commonMain by getting {
             dependencies {
@@ -44,7 +45,7 @@ kotlin {
                 implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
 
                 //SQLDelight
-                implementation("com.squareup.sqldelight:runtime:1.5.5")
+                implementation("app.cash.sqldelight:sqlite-driver:$sqlDelightVersion")
 
 
             }
@@ -60,7 +61,8 @@ kotlin {
                 implementation("io.ktor:ktor-client-okhttp:$ktorVersion")
 
                 //SQLDelight
-                implementation("com.squareup.sqldelight:android-driver:1.5.5")
+                implementation("app.cash.sqldelight:android-driver:$sqlDelightVersion")
+
 
 
             }
@@ -72,7 +74,8 @@ kotlin {
                 implementation("io.ktor:ktor-client-ios:$ktorVersion")
 
                 //SQLDelight
-                implementation("com.squareup.sqldelight:native-driver:1.5.5")
+                implementation("app.cash.sqldelight:native-driver:$sqlDelightVersion")
+
 
             }
         }
@@ -80,11 +83,14 @@ kotlin {
     }
 }
 
-sqldelight {
-    database("AppDatabase") {
-        packageName = "com.pokedex.db"
+sqldelight{
+    databases{
+        create("AppDatabase"){
+            packageName.set("com.pokedex.db")
+        }
     }
 }
+
 
 
 android {

@@ -17,6 +17,7 @@ import com.example.tppokedex.android.databinding.ActivityMainBinding
 import com.example.tppokedex.android.presentation.PokedexScreenState
 import com.example.tppokedex.android.presentation.PokedexViewModel
 import com.example.tppokedex.android.presentation.PokedexViewModelFactory
+import com.example.tppokedex.data.model.PokedexResults
 import com.example.tppokedex.repositoryDB.PokedexDBRepository
 import kotlinx.coroutines.launch
 
@@ -62,6 +63,7 @@ class MainActivity : AppCompatActivity() {
     private fun showPokedex(pokedex: Pokedex) {
         binding.pokedexProgressBar.visibility = View.GONE
         pokedexAdapter.updatePokedex(pokedex.results)
+
     }
 
     private fun handlerError() {

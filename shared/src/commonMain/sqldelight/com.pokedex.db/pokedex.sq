@@ -1,5 +1,5 @@
 CREATE TABLE Pokemon(
-    name TEXT NOT NULL,
+    name TEXT NOT NULL PRIMARY KEY,
     url TEXT NOT NULL
 );
 
@@ -7,4 +7,4 @@ insertPokemon:
 INSERT INTO Pokemon(name,url) VALUES (?,?);
 
 selectAllPokemon:
-SELECT Pokemon.* FROM Pokemon;
+SELECT * FROM Pokemon;
