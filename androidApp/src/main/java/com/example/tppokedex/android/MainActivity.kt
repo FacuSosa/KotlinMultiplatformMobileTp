@@ -82,7 +82,10 @@ class MainActivity : AppCompatActivity() {
         val pokemon = repositoryPokedexBD.getAllPokemon()
 
         if (pokemon.isEmpty()){
-            Toast.makeText(this, "Error buscando la informacion", Toast.LENGTH_LONG).show()
+            binding.rvPokedex.visibility = View.GONE
+            binding.pokedexProgressBar.visibility = View.GONE
+            binding.errorLayout.visibility = View.VISIBLE;
+            Toast.makeText(this, "No hay nada para mostrar", Toast.LENGTH_LONG).show()
         }else{
             binding.pokedexProgressBar.visibility = View.GONE
             pokedexAdapter.updatePokedex(pokemon)
