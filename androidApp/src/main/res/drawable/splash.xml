@@ -5,10 +5,12 @@
 
 
     <item
-        android:width="5dp"
-        android:height="5dp">
+        android:height="5000dp"
+        android:width="5000dp"
+        android:gravity="center"
+       >
         <bitmap
-            android:layout_width="match_parent"
+            android:gravity="center"
             android:src="@drawable/icon_splash" />
     </item>
 

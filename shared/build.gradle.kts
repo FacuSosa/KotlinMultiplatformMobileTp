@@ -30,6 +30,7 @@ kotlin {
     sourceSets {
         val ktorVersion = "2.0.0-beta-1"
         val sqlDelightVersion = "2.0.0"
+        val napier = "2.6.1"
 
         val commonMain by getting {
             dependencies {
@@ -38,7 +39,7 @@ kotlin {
                 implementation("io.ktor:ktor-client-logging:$ktorVersion")
 
                 //NAPIER
-                implementation("io.github.aakira:napier:2.6.1")
+                implementation("io.github.aakira:napier:$napier")
 
                 //SERIALIZATION
                 implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")

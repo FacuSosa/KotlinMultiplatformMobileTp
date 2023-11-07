@@ -1,5 +1,6 @@
 package com.example.tppokedex.android
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -86,6 +87,10 @@ class MainActivity : AppCompatActivity() {
             binding.pokedexProgressBar.visibility = View.GONE
             binding.errorLayout.visibility = View.VISIBLE;
             Toast.makeText(this, "No hay nada para mostrar", Toast.LENGTH_LONG).show()
+            binding.buttonReintentar.setOnClickListener {
+                startActivity(Intent(this,MainActivity::class.java))
+            }
+
         }else{
             binding.pokedexProgressBar.visibility = View.GONE
             pokedexAdapter.updatePokedex(pokemon)
